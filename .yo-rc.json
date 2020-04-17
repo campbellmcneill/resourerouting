@@ -1,0 +1,65 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.np.onboarding",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "resourcerouting",
+    "packageName": "com.np.onboarding",
+    "packageFolder": "com/np/onboarding",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MTdjN2RjZmM5MzE2ODFjODY5ZjBhOGE3OGRlNzk4ZDMwMzIwZDQ4MmY1YzNjMTU0NDA4MDNhMTdlNjE2NjlmNzhlNzQyNDc2MmMwMmE4MmRkNDNjYmIzYzQxZjcxZWEzMjRlNDkwYmQ3ZDBkMzFiMGJkY2Y5ODgwMDJlYmYwNTY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "journal",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1587123802599,
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-kotlin",
+        "version": "1.6.0"
+      },
+      {
+        "name": "generator-jhipster-primeng-charts",
+        "version": "1.2.0"
+      },
+      {
+        "name": "generator-jhipster-kutilang",
+        "version": "0.0.9"
+      },
+      {
+        "name": "generator-jhipster-social-login-api",
+        "version": "0.0.1"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "it", "es"],
+    "blueprints": [
+      {
+        "name": "generator-jhipster-kotlin",
+        "version": "1.6.0"
+      }
+    ]
+  }
+}
