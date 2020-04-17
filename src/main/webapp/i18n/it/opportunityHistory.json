@@ -1,0 +1,30 @@
+{
+  "resourceroutingApp": {
+    "opportunityHistory": {
+      "home": {
+        "title": "OpportunityHistories",
+        "createLabel": "Genera un nuovo Opportunity History",
+        "createOrEditLabel": "Genera o modifica un Opportunity History",
+        "search": "Cerca Opportunity History",
+        "notFound": "No Opportunity Histories found"
+      },
+      "created": "&Egrave; stato generato un nuovo Opportunity History con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Opportunity History identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Opportunity History con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Opportunity History {{ id }}?"
+      },
+      "detail": {
+        "title": "Opportunity History"
+      },
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "rating": "Rating",
+      "comments": "Comments",
+      "language": "Language",
+      "opportunity": "Opportunity",
+      "organization": "Organization",
+      "volunteer": "Volunteer"
+    }
+  }
+}

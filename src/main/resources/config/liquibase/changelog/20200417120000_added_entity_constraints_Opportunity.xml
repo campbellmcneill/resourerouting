@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity Opportunity.
+    -->
+    <changeSet id="20200417120000-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="opportunity_id"
+                                 baseTableName="opportunity_task"
+                                 constraintName="fk_opportunity_task_opportunity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="opportunity"/>
+
+        <addForeignKeyConstraint baseColumnNames="task_id"
+                                 baseTableName="opportunity_task"
+                                 constraintName="fk_opportunity_task_task_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="task"/>
+        
+        <addForeignKeyConstraint baseColumnNames="volunteer_id"
+                                 baseTableName="opportunity"
+                                 constraintName="fk_opportunity_volunteer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="volunteer"/>
+
+    </changeSet>
+</databaseChangeLog>

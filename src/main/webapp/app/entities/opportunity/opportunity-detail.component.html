@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="opportunity">
+            <h2><span jhiTranslate="resourceroutingApp.opportunity.detail.title">Opportunity</span> {{ opportunity.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="resourceroutingApp.opportunity.opportunityTitle">Opportunity Title</span></dt>
+                <dd>
+                    <span>{{ opportunity.opportunityTitle }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunity.opportunityDescription">Opportunity Description</span></dt>
+                <dd>
+                    <span>{{ opportunity.opportunityDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunity.weeklyTimeCommitment">Weekly Time Commitment</span></dt>
+                <dd>
+                    <span>{{ opportunity.weeklyTimeCommitment }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunity.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ opportunity.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunity.task">Task</span></dt>
+                <dd>
+                    <span *ngFor="let task of opportunity.tasks; let last = last">
+                        <a [routerLink]="['/task', task?.id, 'view']">{{ task.title }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunity.volunteer">Volunteer</span></dt>
+                <dd>
+                    <div *ngIf="opportunity.volunteerId">
+                        <a [routerLink]="['/volunteer', opportunity.volunteerId, 'view']">{{ opportunity.volunteerId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/opportunity', opportunity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+{
+    "name": "Volunteer",
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "javadoc": "The firstname attribute.",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hireDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "opportunity",
+            "otherEntityRelationshipName": "volunteer",
+            "relationshipName": "opportunity"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "volunteer",
+            "otherEntityRelationshipName": "volunteer",
+            "relationshipName": "supervisor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "organization",
+            "otherEntityRelationshipName": "volunteer",
+            "javadoc": "Another side of the same relationship",
+            "relationshipName": "organization",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200417115900",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "volunteer",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

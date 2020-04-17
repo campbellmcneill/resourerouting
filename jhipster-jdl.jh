@@ -1,0 +1,116 @@
+entity Region {
+	regionName String
+}
+
+entity Country {
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Organization {
+	organizationName String required
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Task {
+	title String,
+	description String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Volunteer {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant
+}
+
+entity Opportunity {
+	opportunityTitle String,
+    opportunityDescription String,
+	weeklyTimeCommitment Long,
+	duration Long
+}
+
+entity OpportunityHistory {
+	startDate Instant,
+	endDate Instant,
+    rating Long,
+    comments String,
+	language Language
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Organization{location} to Location,
+    Organization{opportunity} to Opportunity
+}
+
+relationship ManyToMany {
+	Opportunity{task(title)} to Task{job}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Volunteer to Opportunity{volunteer},
+	/**
+	* A relationship
+	*/
+	Organization to
+	/**
+	* Another side of the same relationship
+	*/
+	Volunteer{organization}
+}
+
+relationship ManyToOne {
+	Volunteer{supervisor} to Volunteer
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	OpportunityHistory{opportunity} to Opportunity,
+	OpportunityHistory{organization} to Organization,
+	OpportunityHistory{volunteer} to Volunteer
+}
+
+// Set pagination options
+paginate OpportunityHistory, Volunteer with infinite-scroll
+paginate Opportunity with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Volunteer, Opportunity
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

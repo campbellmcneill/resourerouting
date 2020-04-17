@@ -45,6 +45,18 @@ class CacheConfiguration(jHipsterProperties: JHipsterProperties) {
             createCache(cm, com.np.onboarding.domain.User::class.java.name)
             createCache(cm, com.np.onboarding.domain.Authority::class.java.name)
             createCache(cm, com.np.onboarding.domain.User::class.java.name + ".authorities")
+            createCache(cm, com.np.onboarding.domain.Region::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Country::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Location::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Organization::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Organization::class.java.name + ".volunteers")
+            createCache(cm, com.np.onboarding.domain.Task::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Task::class.java.name + ".jobs")
+            createCache(cm, com.np.onboarding.domain.Volunteer::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Volunteer::class.java.name + ".opportunities")
+            createCache(cm, com.np.onboarding.domain.Opportunity::class.java.name)
+            createCache(cm, com.np.onboarding.domain.Opportunity::class.java.name + ".tasks")
+            createCache(cm, com.np.onboarding.domain.OpportunityHistory::class.java.name)
             // jhipster-needle-ehcache-add-entry
         }
     }

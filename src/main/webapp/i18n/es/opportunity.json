@@ -1,0 +1,28 @@
+{
+  "resourceroutingApp": {
+    "opportunity": {
+      "home": {
+        "title": "Opportunities",
+        "createLabel": "Crear nuevo Opportunity",
+        "createOrEditLabel": "Crear o editar Opportunity",
+        "search": "Buscar Opportunity",
+        "notFound": "Ningún Opportunities encontrado"
+      },
+      "created": "Un nuevo Opportunity ha sido creado con el identificador {{ param }}",
+      "updated": "Un Opportunity ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Opportunity ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Opportunity {{ id }}?"
+      },
+      "detail": {
+        "title": "Opportunity"
+      },
+      "opportunityTitle": "Opportunity Title",
+      "opportunityDescription": "Opportunity Description",
+      "weeklyTimeCommitment": "Weekly Time Commitment",
+      "duration": "Duration",
+      "task": "Task",
+      "volunteer": "Volunteer"
+    }
+  }
+}

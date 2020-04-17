@@ -1,0 +1,33 @@
+{
+  "resourceroutingApp": {
+    "volunteer": {
+      "home": {
+        "title": "Volunteers",
+        "createLabel": "Genera un nuovo Volunteer",
+        "createOrEditLabel": "Genera o modifica un Volunteer",
+        "search": "Cerca Volunteer",
+        "notFound": "No Volunteers found"
+      },
+      "created": "&Egrave; stato generato un nuovo Volunteer con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Volunteer identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Volunteer con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Volunteer {{ id }}?"
+      },
+      "detail": {
+        "title": "Volunteer"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "hireDate": "Hire Date",
+      "opportunity": "Opportunity",
+      "supervisor": "Supervisor",
+      "organization": "Organization",
+      "help": {
+        "firstName": "The firstname attribute."
+      }
+    }
+  }
+}

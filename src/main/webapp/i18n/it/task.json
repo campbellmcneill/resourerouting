@@ -1,0 +1,25 @@
+{
+  "resourceroutingApp": {
+    "task": {
+      "home": {
+        "title": "Tasks",
+        "createLabel": "Genera un nuovo Task",
+        "createOrEditLabel": "Genera o modifica un Task",
+        "search": "Cerca Task",
+        "notFound": "No Tasks found"
+      },
+      "created": "&Egrave; stato generato un nuovo Task con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Task identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Task con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Task {{ id }}?"
+      },
+      "detail": {
+        "title": "Task"
+      },
+      "title": "Title",
+      "description": "Description",
+      "job": "Job"
+    }
+  }
+}

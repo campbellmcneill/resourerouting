@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-opportunity-history-heading" jhiTranslate="resourceroutingApp.opportunityHistory.home.createOrEditLabel">Create or edit a Opportunity History</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" formControlName="startDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" formControlName="endDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.rating" for="field_rating">Rating</label>
+                    <input type="number" class="form-control" name="rating" id="field_rating"
+                           formControlName="rating"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.comments" for="field_comments">Comments</label>
+                    <input type="text" class="form-control" name="comments" id="field_comments"
+                           formControlName="comments"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.language" for="field_language">Language</label>
+                    <select class="form-control" name="language" formControlName="language" id="field_language">
+                        <option value="FRENCH">{{ 'resourceroutingApp.Language.FRENCH' | translate }}</option>
+                        <option value="ENGLISH">{{ 'resourceroutingApp.Language.ENGLISH' | translate }}</option>
+                        <option value="SPANISH">{{ 'resourceroutingApp.Language.SPANISH' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.opportunity" for="field_opportunity">Opportunity</label>
+                    <select class="form-control" id="field_opportunity" name="opportunity" formControlName="opportunityId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="opportunityOption.id" *ngFor="let opportunityOption of opportunities; trackBy: trackById">{{ opportunityOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.organization" for="field_organization">Organization</label>
+                    <select class="form-control" id="field_organization" name="organization" formControlName="organizationId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organizationOption.id" *ngFor="let organizationOption of organizations; trackBy: trackById">{{ organizationOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="resourceroutingApp.opportunityHistory.volunteer" for="field_volunteer">Volunteer</label>
+                    <select class="form-control" id="field_volunteer" name="volunteer" formControlName="volunteerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="volunteerOption.id" *ngFor="let volunteerOption of volunteers; trackBy: trackById">{{ volunteerOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

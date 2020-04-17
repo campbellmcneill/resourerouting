@@ -1,0 +1,49 @@
+{
+    "name": "Opportunity",
+    "fields": [
+        {
+            "fieldName": "opportunityTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "opportunityDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "weeklyTimeCommitment",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "job",
+            "relationshipName": "task",
+            "otherEntityField": "title",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "volunteer",
+            "otherEntityRelationshipName": "opportunity",
+            "relationshipName": "volunteer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200417120000",
+    "entityTableName": "opportunity",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

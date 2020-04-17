@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="volunteer">
+            <h2><span jhiTranslate="resourceroutingApp.volunteer.detail.title">Volunteer</span> {{ volunteer.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.firstName" [ngbTooltip]="'resourceroutingApp.volunteer.help.firstName' | translate">First Name</span></dt>
+                <dd>
+                    <span>{{ volunteer.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ volunteer.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.email">Email</span></dt>
+                <dd>
+                    <span>{{ volunteer.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ volunteer.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.hireDate">Hire Date</span></dt>
+                <dd>
+                    <span>{{ volunteer.hireDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.supervisor">Supervisor</span></dt>
+                <dd>
+                    <div *ngIf="volunteer.supervisorId">
+                        <a [routerLink]="['/volunteer', volunteer.supervisorId, 'view']">{{ volunteer.supervisorId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.volunteer.organization">Organization</span></dt>
+                <dd>
+                    <div *ngIf="volunteer.organizationId">
+                        <a [routerLink]="['/organization', volunteer.organizationId, 'view']">{{ volunteer.organizationId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/volunteer', volunteer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

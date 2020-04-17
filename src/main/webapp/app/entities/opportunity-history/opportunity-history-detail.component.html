@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="opportunityHistory">
+            <h2><span jhiTranslate="resourceroutingApp.opportunityHistory.detail.title">Opportunity History</span> {{ opportunityHistory.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ opportunityHistory.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ opportunityHistory.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.rating">Rating</span></dt>
+                <dd>
+                    <span>{{ opportunityHistory.rating }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.comments">Comments</span></dt>
+                <dd>
+                    <span>{{ opportunityHistory.comments }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.language">Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'resourceroutingApp.Language.' + opportunityHistory.language }}">{{ opportunityHistory.language }}</span>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.opportunity">Opportunity</span></dt>
+                <dd>
+                    <div *ngIf="opportunityHistory.opportunityId">
+                        <a [routerLink]="['/opportunity', opportunityHistory.opportunityId, 'view']">{{ opportunityHistory.opportunityId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.organization">Organization</span></dt>
+                <dd>
+                    <div *ngIf="opportunityHistory.organizationId">
+                        <a [routerLink]="['/organization', opportunityHistory.organizationId, 'view']">{{ opportunityHistory.organizationId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="resourceroutingApp.opportunityHistory.volunteer">Volunteer</span></dt>
+                <dd>
+                    <div *ngIf="opportunityHistory.volunteerId">
+                        <a [routerLink]="['/volunteer', opportunityHistory.volunteerId, 'view']">{{ opportunityHistory.volunteerId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/opportunity-history', opportunityHistory.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

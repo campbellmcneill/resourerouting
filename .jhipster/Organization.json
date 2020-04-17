@@ -1,0 +1,48 @@
+{
+    "name": "Organization",
+    "fields": [
+        {
+            "fieldName": "organizationName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "organization",
+            "relationshipName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "opportunity",
+            "otherEntityRelationshipName": "organization",
+            "relationshipName": "opportunity",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "volunteer",
+            "otherEntityRelationshipName": "organization",
+            "javadoc": "A relationship",
+            "relationshipName": "volunteer"
+        }
+    ],
+    "changelogDate": "20200417115700",
+    "entityTableName": "organization",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
